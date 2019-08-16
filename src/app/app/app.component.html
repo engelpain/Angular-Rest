@@ -1,0 +1,35 @@
+<header class="container-fluid">
+  <div class="row">
+    <div class="col border-bottom py-3 mb-3">
+      <h1 class="text-center">
+        Using {{ title }} with <span class="text-danger">Angular 8</span>
+      </h1>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th> name </th>
+            <th> email </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let user of users'>
+            <td> <img class="rounded-circle" [src]="user.picture.medium" [alt]="user.name.first + user.name.last"> </td>
+            <td class="text-capitalize"> {{ user.name.last }} {{ user.name.first }} </td>
+            <td>{{ user.email }} </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</main>
+
+<router-outlet></router-outlet>
